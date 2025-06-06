@@ -49,6 +49,9 @@ dependencies:
   # Socket
   socket_io_client: ^2.0.3
 
+  # Mapbox for maps
+  mapbox_maps_flutter: ^1.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
