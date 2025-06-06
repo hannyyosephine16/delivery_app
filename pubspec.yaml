@@ -1,29 +1,12 @@
 name: delivery_app
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+description: Food delivery application
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
 environment:
-  #  sdk: ^3.7.2
   sdk: '>=3.0.0 <4.0.0'
   flutter: ">=3.10.0"
 
-# Add regular dependencies here.
 dependencies:
   flutter:
     sdk: flutter
@@ -31,87 +14,41 @@ dependencies:
   # State Management
   get: ^4.6.6
 
-  # HTTP & API
-  dio: ^5.4.0
+  # Network & API
+  dio: ^5.3.2
 
   # Local Storage
   get_storage: ^2.1.1
   shared_preferences: ^2.2.2
+  sqflite: ^2.3.0
 
   # Location & Maps
   geolocator: ^10.1.0
-  google_maps_flutter: ^2.5.3
-  geocoding: ^3.0.0
-  location: ^5.0.3
+  geocoding: ^2.1.1
+  google_maps_flutter: ^2.5.0
 
-  # Real-time Communication
-  socket_io_client: ^2.0.3
-
-  # Image Handling
-  cached_network_image: ^3.3.0
-  image_picker: ^1.0.4
-  image: ^4.1.7
-
-  # UI Components
-  flutter_svg: ^2.0.9
-  lottie: ^2.7.0
-  shimmer: ^3.0.0
-
-  # Utilities
-  intl: ^0.19.0
-  url_launcher: ^6.2.2
-  permission_handler: ^11.1.0
-
-  # Push Notifications
-  firebase_messaging: ^14.7.6
+  # Notifications
+  firebase_core: ^2.24.2
+  firebase_messaging: ^14.7.9
   flutter_local_notifications: ^16.3.0
 
-  # Local Database
-  sqflite: ^2.3.0
-  path: ^1.8.3
-
-  # Icons & UI
-  cupertino_icons: ^1.0.6
-
-  # Internationalization
-  flutter_localizations:
-    sdk: flutter
-
-  # Testing
-  mockito: ^5.4.4
-  build_runner: ^2.4.7
-
-  firebase_core: ^2.20.0
-
-  # Connectivity
+  # UI & Utils
+  cached_network_image: ^3.3.0
+  image_picker: ^1.0.4
+  permission_handler: ^11.0.1
   connectivity_plus: ^5.0.1
+  intl: ^0.18.1
 
-
-  package_info_plus: ^4.2.0
-  device_info_plus: ^9.1.0
-  share_plus: ^7.2.1
+  # Socket
+  socket_io_client: ^2.0.3
 
 dev_dependencies:
-  lints: ^5.0.0
-  test: ^1.24.0
-
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/images/
-    - assets/images/placeholders/
     - assets/icons/
-    - assets/animations/
-
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Poppins-Bold.ttf
-          weight: 700

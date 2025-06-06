@@ -147,12 +147,18 @@ class AppConstants {
   static const String successOrderCancelled = 'Order cancelled successfully';
 
   // Default values
-  static const String defaultAvatarUrl =
-      'assets/images/placeholders/placeholder_user.png';
-  static const String defaultStoreImageUrl =
-      'assets/images/placeholders/placeholder_store.png';
-  static const String defaultFoodImageUrl =
-      'assets/images/placeholders/placeholder_food.png';
+  // lib/core/constants/app_constants.dart - Update the image constants
+
+// Replace the asset paths with placeholder URLs or remove them temporarily
+  static const String defaultAvatarUrl = 'https://via.placeholder.com/150x150/CCCCCC/FFFFFF?text=User';
+  static const String defaultStoreImageUrl = 'https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Store';
+  static const String defaultFoodImageUrl = 'https://via.placeholder.com/200x150/CCCCCC/FFFFFF?text=Food';
+  // static const String defaultAvatarUrl =
+  //     'assets/images/placeholders/placeholder_user.png';
+  // static const String defaultStoreImageUrl =
+  //     'assets/images/placeholders/placeholder_store.png';
+  // static const String defaultFoodImageUrl =
+  //     'assets/images/placeholders/placeholder_food.png';
 
   // Social media
   static const String websiteUrl = 'https://delpick.com';
