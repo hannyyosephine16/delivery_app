@@ -19,11 +19,13 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8;
+//        jvmTarget = JavaVersion.VERSION_1_8;
+        jvmTarget = "1.8"
     }
 
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin';
+//        main.java.srcDirs += 'src/main/kotlin';
+        getByName("main").java.srcDirs("src/main/kotlin")
     }
 
     defaultConfig {
@@ -32,13 +34,18 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
 //        minSdk = 21  // Required for some plugins
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+//        minSdk = flutter.minSdkVersion
+//        targetSdk = flutter.targetSdkVersion
+//        versionCode = flutter.versionCode
+//        versionName = flutter.versionName
 
         // Enable multidex for large apps
 //        multiDexEnabled = true
+        minSdk = 21
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -46,7 +53,14 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+
+    packagingOptions {
+        pickFirst("**/libc++_shared.so")
+        pickFirst("**/libjsc.so")
     }
 }
 
@@ -59,5 +73,5 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     // MultiDex support
-//    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("androidx.multidex:multidex:2.0.1")
 }
