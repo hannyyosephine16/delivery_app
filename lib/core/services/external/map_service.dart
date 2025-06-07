@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/core/services/external/location_service.dart';
+import 'package:del_pick/core/services/external/location_service.dart';
 
 class MapService extends getx.GetxService {
   final LocationService _locationService = getx.Get.find<LocationService>();

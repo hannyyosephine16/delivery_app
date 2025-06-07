@@ -2,14 +2,14 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/app/config/environment_config.dart';
-import 'package:delivery_app/core/constants/app_constants.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
-import 'package:delivery_app/core/interceptors/auth_interceptor.dart';
-import 'package:delivery_app/core/interceptors/error_interceptor.dart';
-import 'package:delivery_app/core/interceptors/logging_interceptor.dart';
-import 'package:delivery_app/core/interceptors/connectivity_interceptor.dart';
+import 'package:del_pick/app/config/environment_config.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
+import 'package:del_pick/core/interceptors/auth_interceptor.dart';
+import 'package:del_pick/core/interceptors/error_interceptor.dart';
+import 'package:del_pick/core/interceptors/logging_interceptor.dart';
+import 'package:del_pick/core/interceptors/connectivity_interceptor.dart';
 
 class ApiService extends getx.GetxService {
   late Dio _dio;

@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/app/config/database_config.dart';
+import 'package:del_pick/app/config/database_config.dart';
 
 class DatabaseService extends getx.GetxService {
   Database? _database;

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/core/services/external/connectivity_service.dart';
+import 'package:del_pick/core/services/external/connectivity_service.dart';
 
 class ConnectivityInterceptor extends Interceptor {
   @override

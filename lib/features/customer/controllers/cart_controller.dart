@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/data/models/order/cart_item_model.dart';
-import 'package:delivery_app/data/models/menu/menu_item_model.dart';
-import 'package:delivery_app/data/models/store/store_model.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
-import 'package:delivery_app/core/constants/app_constants.dart';
+import 'package:del_pick/data/models/order/cart_item_model.dart';
+import 'package:del_pick/data/models/menu/menu_item_model.dart';
+import 'package:del_pick/data/models/store/store_model.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
 
 class CartController extends GetxController {
   final StorageService _storageService = Get.find<StorageService>();

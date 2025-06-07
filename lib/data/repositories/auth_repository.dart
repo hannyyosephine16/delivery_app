@@ -1,6 +1,6 @@
-import 'package:delivery_app/data/providers/auth_provider.dart';
-import 'package:delivery_app/data/models/auth/user_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/auth_provider.dart';
+import 'package:del_pick/data/models/auth/user_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class AuthRepository {
   final AuthProvider _authProvider;

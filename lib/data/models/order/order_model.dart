@@ -1,6 +1,6 @@
 // lib/data/models/order/order_model.dart - Fixed null safety
-import 'package:delivery_app/data/models/auth/user_model.dart';
-import 'package:delivery_app/data/models/store/store_model.dart';
+import 'package:del_pick/data/models/auth/user_model.dart';
+import 'package:del_pick/data/models/store/store_model.dart';
 import 'order_item_model.dart';
 
 class OrderModel {

@@ -2,15 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/app/routes/app_routes.dart';
-import 'package:delivery_app/core/widgets/loading_widget.dart';
-import 'package:delivery_app/core/widgets/empty_state_widget.dart';
-import 'package:delivery_app/core/widgets/error_widget.dart' as app_error;
-import 'package:delivery_app/features/customer/controllers/store_controller.dart';
-import 'package:delivery_app/features/customer/widgets/store_card.dart';
-import 'package:delivery_app/features/customer/widgets/store_filter_widget.dart';
-import 'package:delivery_app/features/customer/widgets/store_search_bar.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
+import 'package:del_pick/app/routes/app_routes.dart';
+import 'package:del_pick/core/widgets/loading_widget.dart';
+import 'package:del_pick/core/widgets/empty_state_widget.dart';
+import 'package:del_pick/core/widgets/error_widget.dart' as app_error;
+import 'package:del_pick/features/customer/controllers/store_controller.dart';
+import 'package:del_pick/features/customer/widgets/store_card.dart';
+import 'package:del_pick/features/customer/widgets/store_filter_widget.dart';
+import 'package:del_pick/features/customer/widgets/store_search_bar.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
 
 class StoreListScreen extends StatelessWidget {
   final StoreController controller = Get.find<StoreController>();

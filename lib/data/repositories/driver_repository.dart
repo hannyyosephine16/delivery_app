@@ -1,8 +1,8 @@
-import 'package:delivery_app/data/providers/driver_provider.dart';
-import 'package:delivery_app/data/models/driver/driver_model.dart';
-import 'package:delivery_app/data/models/driver/driver_request_model.dart';
-import 'package:delivery_app/data/models/base/base_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/driver_provider.dart';
+import 'package:del_pick/data/models/driver/driver_model.dart';
+import 'package:del_pick/data/models/driver/driver_request_model.dart';
+import 'package:del_pick/data/models/base/base_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class DriverRepository {
   final DriverProvider _driverProvider;

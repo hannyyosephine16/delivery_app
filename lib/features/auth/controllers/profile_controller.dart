@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/auth_repository.dart';
-import 'package:delivery_app/data/models/auth/user_model.dart';
+import 'package:del_pick/data/repositories/auth_repository.dart';
+import 'package:del_pick/data/models/auth/user_model.dart';
 
 class ProfileController extends GetxController {
   final AuthRepository _authRepository;

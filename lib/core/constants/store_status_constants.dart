@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
 
 class StoreStatusConstants {
   // Store status values

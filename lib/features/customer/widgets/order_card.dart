@@ -1,8 +1,8 @@
 // lib/features/customer/widgets/order_card.dart
 import 'package:flutter/material.dart';
-import 'package:delivery_app/data/models/order/order_model.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
+import 'package:del_pick/data/models/order/order_model.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
 
 class OrderCard extends StatelessWidget {
   final OrderModel order;

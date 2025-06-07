@@ -1,22 +1,22 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/store_repository.dart';
-import 'package:delivery_app/data/repositories/menu_repository.dart';
-import 'package:delivery_app/data/repositories/order_repository.dart';
-import 'package:delivery_app/data/providers/store_provider.dart';
-import 'package:delivery_app/data/providers/menu_provider.dart';
-import 'package:delivery_app/data/providers/order_provider.dart';
-import 'package:delivery_app/data/datasources/remote/store_remote_datasource.dart';
-import 'package:delivery_app/data/datasources/remote/menu_remote_datasource.dart';
-import 'package:delivery_app/data/datasources/remote/order_remote_datasource.dart';
+import 'package:del_pick/data/repositories/store_repository.dart';
+import 'package:del_pick/data/repositories/menu_repository.dart';
+import 'package:del_pick/data/repositories/order_repository.dart';
+import 'package:del_pick/data/providers/store_provider.dart';
+import 'package:del_pick/data/providers/menu_provider.dart';
+import 'package:del_pick/data/providers/order_provider.dart';
+import 'package:del_pick/data/datasources/remote/store_remote_datasource.dart';
+import 'package:del_pick/data/datasources/remote/menu_remote_datasource.dart';
+import 'package:del_pick/data/datasources/remote/order_remote_datasource.dart';
 
 // Import the controller files once they're created
-// import 'package:delivery_app/features/store/controllers/store_dashboard_controller.dart';
-// import 'package:delivery_app/features/store/controllers/menu_management_controller.dart';
-// import 'package:delivery_app/features/store/controllers/add_menu_item_controller.dart';
-// import 'package:delivery_app/features/store/controllers/store_orders_controller.dart';
-// import 'package:delivery_app/features/store/controllers/store_analytics_controller.dart';
-// import 'package:delivery_app/features/store/controllers/store_settings_controller.dart';
-// import 'package:delivery_app/features/store/controllers/store_profile_controller.dart';
+// import 'package:del_pick/features/store/controllers/store_dashboard_controller.dart';
+// import 'package:del_pick/features/store/controllers/menu_management_controller.dart';
+// import 'package:del_pick/features/store/controllers/add_menu_item_controller.dart';
+// import 'package:del_pick/features/store/controllers/store_orders_controller.dart';
+// import 'package:del_pick/features/store/controllers/store_analytics_controller.dart';
+// import 'package:del_pick/features/store/controllers/store_settings_controller.dart';
+// import 'package:del_pick/features/store/controllers/store_profile_controller.dart';
 
 class StoreBinding extends Bindings {
   @override

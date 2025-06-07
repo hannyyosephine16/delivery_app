@@ -1,9 +1,9 @@
 // lib/data/repositories/order_repository.dart
 
-import 'package:delivery_app/data/providers/order_provider.dart';
-import 'package:delivery_app/data/models/order/order_model.dart';
-import 'package:delivery_app/data/models/base/base_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/order_provider.dart';
+import 'package:del_pick/data/models/order/order_model.dart';
+import 'package:del_pick/data/models/base/base_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class OrderRepository {
   final OrderProvider _orderProvider;

@@ -5,8 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';  // Temporarily commented
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
 
 class NotificationService extends getx.GetxService {
   final FlutterLocalNotificationsPlugin _localNotifications =

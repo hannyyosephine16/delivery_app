@@ -1,17 +1,17 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/core/services/api/api_service.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/services/local/cache_service.dart';
-import 'package:delivery_app/core/services/local/database_service.dart';
-import 'package:delivery_app/core/services/external/location_service.dart';
-import 'package:delivery_app/core/services/external/notification_service.dart';
-import 'package:delivery_app/core/services/external/connectivity_service.dart';
-import 'package:delivery_app/core/services/external/permission_service.dart';
-import 'package:delivery_app/features/shared/controllers/navigation_controller.dart';
-import 'package:delivery_app/features/shared/controllers/theme_controller.dart';
-import 'package:delivery_app/features/shared/controllers/language_controller.dart';
-import 'package:delivery_app/features/shared/controllers/notification_controller.dart';
-import 'package:delivery_app/features/shared/controllers/connectivity_controller.dart';
+import 'package:del_pick/core/services/api/api_service.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/services/local/cache_service.dart';
+import 'package:del_pick/core/services/local/database_service.dart';
+import 'package:del_pick/core/services/external/location_service.dart';
+import 'package:del_pick/core/services/external/notification_service.dart';
+import 'package:del_pick/core/services/external/connectivity_service.dart';
+import 'package:del_pick/core/services/external/permission_service.dart';
+import 'package:del_pick/features/shared/controllers/navigation_controller.dart';
+import 'package:del_pick/features/shared/controllers/theme_controller.dart';
+import 'package:del_pick/features/shared/controllers/language_controller.dart';
+import 'package:del_pick/features/shared/controllers/notification_controller.dart';
+import 'package:del_pick/features/shared/controllers/connectivity_controller.dart';
 
 class InitialBinding extends Bindings {
   @override

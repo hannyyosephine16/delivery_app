@@ -1,5 +1,5 @@
-import 'package:delivery_app/data/models/order/order_model.dart';
-import 'package:delivery_app/data/models/driver/driver_model.dart';
+import 'package:del_pick/data/models/order/order_model.dart';
+import 'package:del_pick/data/models/driver/driver_model.dart';
 
 class DriverRequestModel {
   final int id;

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/auth_repository.dart';
+import 'package:del_pick/data/repositories/auth_repository.dart';
 
 class ForgetPasswordController extends GetxController {
   final AuthRepository _authRepository;

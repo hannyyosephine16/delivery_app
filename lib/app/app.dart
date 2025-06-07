@@ -1,7 +1,7 @@
 // Core exports
-export 'package:delivery_app/core/constants/app_constants.dart';
-// export 'package:delivery_app/core/constants/api_endpoints.dart';
-export 'package:delivery_app/core/constants/storage_constants.dart';
+export 'package:del_pick/core/constants/app_constants.dart';
+// export 'package:del_pick/core/constants/api_endpoints.dart';
+export 'package:del_pick/core/constants/storage_constants.dart';
 
 // App configuration exports
 export 'config/app_config.dart';
@@ -26,12 +26,12 @@ export 'bindings/driver_binding.dart';
 export 'bindings/store_binding.dart';
 
 // Core widgets exports
-export 'package:delivery_app/core/widgets/custom_button.dart';
-export 'package:delivery_app/core/widgets/custom_text_field.dart';
-export 'package:delivery_app/core/widgets/custom_app_bar.dart';
-export 'package:delivery_app/core/widgets/loading_widget.dart';
-export 'package:delivery_app/core/widgets/error_widget.dart';
+export 'package:del_pick/core/widgets/custom_button.dart';
+export 'package:del_pick/core/widgets/custom_text_field.dart';
+export 'package:del_pick/core/widgets/custom_app_bar.dart';
+export 'package:del_pick/core/widgets/loading_widget.dart';
+export 'package:del_pick/core/widgets/error_widget.dart';
 
 // Core services exports
-export 'package:delivery_app/core/services/api/api_service.dart';
-export 'package:delivery_app/core/services/local/storage_service.dart';
+export 'package:del_pick/core/services/api/api_service.dart';
+export 'package:del_pick/core/services/local/storage_service.dart';

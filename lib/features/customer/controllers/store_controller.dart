@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/core/errors/failures.dart';
-import 'package:delivery_app/core/errors/error_handler.dart';
-import 'package:delivery_app/data/models/store/store_model.dart';
-import 'package:delivery_app/data/repositories/store_repository.dart';
-import 'package:delivery_app/core/services/external/location_service.dart';
+import 'package:del_pick/core/errors/failures.dart';
+import 'package:del_pick/core/errors/error_handler.dart';
+import 'package:del_pick/data/models/store/store_model.dart';
+import 'package:del_pick/data/repositories/store_repository.dart';
+import 'package:del_pick/core/services/external/location_service.dart';
 
 class StoreController extends GetxController {
   final StoreRepository _storeRepository;

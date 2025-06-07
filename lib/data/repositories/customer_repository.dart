@@ -1,9 +1,9 @@
 // lib/data/repositories/customer_repository.dart
 
-import 'package:delivery_app/data/providers/customer_provider.dart';
-import 'package:delivery_app/data/models/customer/customer_model.dart';
-import 'package:delivery_app/data/models/base/base_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/customer_provider.dart';
+import 'package:del_pick/data/models/customer/customer_model.dart';
+import 'package:del_pick/data/models/base/base_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class CustomerRepository {
   final CustomerProvider _customerProvider;

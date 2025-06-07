@@ -2,9 +2,9 @@
 import 'dart:async';
 import 'package:get/get.dart' as getx;
 import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:delivery_app/app/config/environment_config.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
+import 'package:del_pick/app/config/environment_config.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
 
 class SocketService extends getx.GetxService {
   IO.Socket? _socket;

@@ -1,7 +1,7 @@
 // lib/data/repositories/tracking_repository.dart
-import 'package:delivery_app/data/providers/tracking_provider.dart';
-import 'package:delivery_app/data/models/tracking/tracking_info_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/tracking_provider.dart';
+import 'package:del_pick/data/models/tracking/tracking_info_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class TrackingRepository {
   final TrackingProvider _trackingProvider;

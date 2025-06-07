@@ -1,6 +1,6 @@
 // import 'package:get/get.dart' as getx;
-// import 'package:delivery_app/core/services/local/storage_service.dart';
-// import 'package:delivery_app/core/constants/app_constants.dart';
+// import 'package:del_pick/core/services/local/storage_service.dart';
+// import 'package:del_pick/core/constants/app_constants.dart';
 //
 // class CacheService extends getx.GetxService {
 //   final StorageService _storageService = getx.Get.find<StorageService>();

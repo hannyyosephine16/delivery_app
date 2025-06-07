@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
 
 class StoreFilterWidget extends StatelessWidget {
   final VoidCallback onSortByDistance;

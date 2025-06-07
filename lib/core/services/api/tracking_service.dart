@@ -1,10 +1,10 @@
 // lib/core/services/api/tracking_service.dart
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/core/services/api/api_service.dart';
-import 'package:delivery_app/core/constants/api_endpoints.dart';
-import 'package:delivery_app/core/utils/result.dart';
-import 'package:delivery_app/data/models/tracking/tracking_data_model.dart';
+import 'package:del_pick/core/services/api/api_service.dart';
+import 'package:del_pick/core/constants/api_endpoints.dart';
+import 'package:del_pick/core/utils/result.dart';
+import 'package:del_pick/data/models/tracking/tracking_data_model.dart';
 
 class TrackingService extends GetxService {
   final ApiService _apiService = Get.find<ApiService>();

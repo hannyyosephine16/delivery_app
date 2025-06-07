@@ -9,8 +9,17 @@ class ConnectivityService extends GetxService {
   final RxBool _isConnected = true.obs;
   bool get isConnected => _isConnected.value;
 
-  final Rx<ConnectivityResult> _connectionType = ConnectivityResult.wifi.obs;
-  ConnectivityResult get connectionType => _connectionType.value;
+  final RxList<ConnectivityResult> _connectionTypes =
+      <ConnectivityResult>[].obs;
+  List<ConnectivityResult> get connectionTypes => _connectionTypes.value;
+
+  // Get the primary connection type (first non-none result)
+  ConnectivityResult get primaryConnectionType {
+    return _connectionTypes.firstWhere(
+      (result) => result != ConnectivityResult.none,
+      orElse: () => ConnectivityResult.none,
+    );
+  }
 
   @override
   Future<void> onInit() async {
@@ -37,37 +46,34 @@ class ConnectivityService extends GetxService {
   }
 
   void _updateConnectionStatus(List<ConnectivityResult> results) {
-    // Check if any of the results indicate a connection
+    // Update the connection types list
+    _connectionTypes.value = results;
+
+    // Check if any result indicates a connection (not none)
     final isConnected =
         results.any((result) => result != ConnectivityResult.none);
     _isConnected.value = isConnected;
 
-    // Set the primary connection type (prefer wifi, then mobile)
-    if (results.contains(ConnectivityResult.wifi)) {
-      _connectionType.value = ConnectivityResult.wifi;
-    } else if (results.contains(ConnectivityResult.mobile)) {
-      _connectionType.value = ConnectivityResult.mobile;
-    } else if (results.contains(ConnectivityResult.ethernet)) {
-      _connectionType.value = ConnectivityResult.ethernet;
-    } else {
-      _connectionType.value = ConnectivityResult.none;
-    }
-
     // Optional: Print connection status for debugging
     print('Connection status: ${isConnected ? 'Connected' : 'Disconnected'}');
-    print('Connection type: ${_connectionType.value}');
+    print('Connection types: ${results.join(", ")}');
+    print('Primary connection type: ${primaryConnectionType}');
   }
 
-  // Additional helper methods
-  bool get isWifiConnected => _connectionType.value == ConnectivityResult.wifi;
+  // Helper methods for checking specific connection types
+  bool get isWifiConnected =>
+      _connectionTypes.contains(ConnectivityResult.wifi);
   bool get isMobileConnected =>
-      _connectionType.value == ConnectivityResult.mobile;
+      _connectionTypes.contains(ConnectivityResult.mobile);
   bool get isEthernetConnected =>
-      _connectionType.value == ConnectivityResult.ethernet;
+      _connectionTypes.contains(ConnectivityResult.ethernet);
+  bool get isVpnConnected => _connectionTypes.contains(ConnectivityResult.vpn);
+  bool get isBluetoothConnected =>
+      _connectionTypes.contains(ConnectivityResult.bluetooth);
 
-  // Get readable connection type string
-  String get connectionTypeString {
-    switch (_connectionType.value) {
+  // Get readable connection type string for primary connection
+  String get primaryConnectionTypeString {
+    switch (primaryConnectionType) {
       case ConnectivityResult.wifi:
         return 'WiFi';
       case ConnectivityResult.mobile:
@@ -84,6 +90,36 @@ class ConnectivityService extends GetxService {
       default:
         return 'No Connection';
     }
+  }
+
+  // Get all connection types as readable strings
+  List<String> get connectionTypeStrings {
+    return _connectionTypes.map((result) {
+      switch (result) {
+        case ConnectivityResult.wifi:
+          return 'WiFi';
+        case ConnectivityResult.mobile:
+          return 'Mobile Data';
+        case ConnectivityResult.ethernet:
+          return 'Ethernet';
+        case ConnectivityResult.vpn:
+          return 'VPN';
+        case ConnectivityResult.bluetooth:
+          return 'Bluetooth';
+        case ConnectivityResult.other:
+          return 'Other';
+        case ConnectivityResult.none:
+        default:
+          return 'No Connection';
+      }
+    }).toList();
+  }
+
+  // Get a combined connection string
+  String get connectionStatusString {
+    if (!isConnected) return 'No Connection';
+    if (_connectionTypes.length == 1) return primaryConnectionTypeString;
+    return connectionTypeStrings.join(' + ');
   }
 
   // Force check connectivity (useful for pull-to-refresh scenarios)

@@ -1,8 +1,8 @@
 // Driver Home Controller
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/driver_repository.dart';
-import 'package:delivery_app/data/repositories/order_repository.dart';
-import 'package:delivery_app/core/services/external/location_service.dart';
+import 'package:del_pick/data/repositories/driver_repository.dart';
+import 'package:del_pick/data/repositories/order_repository.dart';
+import 'package:del_pick/core/services/external/location_service.dart';
 
 import '../../../data/repositories/tracking_repository.dart';
 

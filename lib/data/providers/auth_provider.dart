@@ -1,7 +1,7 @@
-import 'package:delivery_app/data/datasources/remote/auth_remote_datasource.dart';
-import 'package:delivery_app/data/datasources/local/auth_local_datasource.dart';
-import 'package:delivery_app/data/models/auth/user_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/datasources/remote/auth_remote_datasource.dart';
+import 'package:del_pick/data/datasources/local/auth_local_datasource.dart';
+import 'package:del_pick/data/models/auth/user_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class AuthProvider {
   final AuthRemoteDataSource remoteDataSource;

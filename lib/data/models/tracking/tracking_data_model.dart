@@ -1,89 +1,180 @@
-// lib/core/services/api/tracking_service.dart
-import 'package:dio/dio.dart';
-import 'package:get/get.dart';
-import 'package:delivery_app/core/services/api/api_service.dart';
-import 'package:delivery_app/core/constants/api_endpoints.dart';
-import 'package:delivery_app/core/utils/result.dart';
-import 'package:delivery_app/data/models/tracking/tracking_data_model.dart';
+// lib/data/models/tracking/tracking_data_model.dart
+import 'package:del_pick/data/models/tracking/location_model.dart';
+class TrackingData {
+  final int orderId;
+  final String status;
+  final LocationModel? storeLocation;
+  final LocationModel? driverLocation;
+  final LocationModel? customerLocation;
+  final String? estimatedDeliveryTime;
+  final DriverInfo? driver;
+  final String? message;
+  final DateTime? lastUpdated;
 
-class TrackingService extends GetxService {
-  final ApiService _apiService = Get.find<ApiService>();
+  TrackingData({
+    required this.orderId,
+    required this.status,
+    this.storeLocation,
+    this.driverLocation,
+    this.customerLocation,
+    this.estimatedDeliveryTime,
+    this.driver,
+    this.message,
+    this.lastUpdated,
+  });
 
-  /// Get tracking data for a specific order
-  Future<Result<TrackingData>> getTrackingData(int orderId) async {
-    try {
-      final response =
-          await _apiService.get(ApiEndpoints.getTrackingData(orderId));
+  factory TrackingData.fromJson(Map<String, dynamic> json) {
+    return TrackingData(
+      orderId: json['orderId'] as int,
+      status: json['status'] as String,
+      storeLocation: json['storeLocation'] != null
+          ? LocationModel.fromJson(
+              json['storeLocation'] as Map<String, dynamic>)
+          : null,
+      driverLocation: json['driverLocation'] != null
+          ? LocationModel.fromJson(
+              json['driverLocation'] as Map<String, dynamic>)
+          : null,
+      customerLocation: json['customerLocation'] != null
+          ? LocationModel.fromJson(
+              json['customerLocation'] as Map<String, dynamic>)
+          : null,
+      estimatedDeliveryTime: json['estimatedDeliveryTime'] as String?,
+      driver: json['driver'] != null
+          ? DriverInfo.fromJson(json['driver'] as Map<String, dynamic>)
+          : null,
+      message: json['message'] as String?,
+      lastUpdated: json['lastUpdated'] != null
+          ? DateTime.parse(json['lastUpdated'] as String)
+          : null,
+    );
+  }
 
-      if (response.statusCode == 200) {
-        final trackingData = TrackingData.fromJson(response.data['data']);
-        return Result.success(trackingData);
-      } else {
-        return Result.failure(
-          response.data['message'] ?? 'Failed to get tracking data',
-        );
-      }
-    } catch (e) {
-      return Result.failure('An error occurred: $e');
+  Map<String, dynamic> toJson() {
+    return {
+      'orderId': orderId,
+      'status': status,
+      'storeLocation': storeLocation?.toJson(),
+      'driverLocation': driverLocation?.toJson(),
+      'customerLocation': customerLocation?.toJson(),
+      'estimatedDeliveryTime': estimatedDeliveryTime,
+      'driver': driver?.toJson(),
+      'message': message,
+      'lastUpdated': lastUpdated?.toIso8601String(),
+    };
+  }
+
+  TrackingData copyWith({
+    int? orderId,
+    String? status,
+    LocationModel? storeLocation,
+    LocationModel? driverLocation,
+    LocationModel? customerLocation,
+    String? estimatedDeliveryTime,
+    DriverInfo? driver,
+    String? message,
+    DateTime? lastUpdated,
+  }) {
+    return TrackingData(
+      orderId: orderId ?? this.orderId,
+      status: status ?? this.status,
+      storeLocation: storeLocation ?? this.storeLocation,
+      driverLocation: driverLocation ?? this.driverLocation,
+      customerLocation: customerLocation ?? this.customerLocation,
+      estimatedDeliveryTime:
+          estimatedDeliveryTime ?? this.estimatedDeliveryTime,
+      driver: driver ?? this.driver,
+      message: message ?? this.message,
+      lastUpdated: lastUpdated ?? this.lastUpdated,
+    );
+  }
+
+  // Helper getters
+  bool get hasDriver => driver != null;
+  bool get hasDriverLocation => driverLocation != null;
+  bool get hasStoreLocation => storeLocation != null;
+  bool get hasCustomerLocation => customerLocation != null;
+
+  String get statusDisplayName {
+    switch (status.toLowerCase()) {
+      case 'pending':
+        return 'Menunggu Konfirmasi';
+      case 'preparing':
+        return 'Sedang Disiapkan';
+      case 'on_the_way':
+        return 'Dalam Perjalanan';
+      case 'delivered':
+        return 'Terkirim';
+      case 'cancelled':
+        return 'Dibatalkan';
+      default:
+        return status;
     }
   }
 
-  /// Start delivery (for driver)
-  Future<Result<Map<String, dynamic>>> startDelivery(int orderId) async {
-    try {
-      final response =
-          await _apiService.put(ApiEndpoints.startDelivery(orderId));
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TrackingData &&
+          runtimeType == other.runtimeType &&
+          orderId == other.orderId;
 
-      if (response.statusCode == 200) {
-        return Result.success(response.data['data']);
-      } else {
-        return Result.failure(
-          response.data['message'] ?? 'Failed to start delivery',
-        );
-      }
-    } catch (e) {
-      return Result.failure('An error occurred: $e');
-    }
+  @override
+  int get hashCode => orderId.hashCode;
+
+  @override
+  String toString() {
+    return 'TrackingData{orderId: $orderId, status: $status, hasDriver: $hasDriver}';
+  }
+}
+
+class DriverInfo {
+  final int id;
+  final String name;
+  final String? phone;
+  final String? vehicleType;
+  final String? vehicleNumber;
+  final double? rating;
+  final String? avatar;
+
+  DriverInfo({
+    required this.id,
+    required this.name,
+    this.phone,
+    this.vehicleType,
+    this.vehicleNumber,
+    this.rating,
+    this.avatar,
+  });
+
+  factory DriverInfo.fromJson(Map<String, dynamic> json) {
+    return DriverInfo(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      phone: json['phone'] as String?,
+      vehicleType: json['vehicleType'] as String?,
+      vehicleNumber: json['vehicleNumber'] as String?,
+      rating: (json['rating'] as num?)?.toDouble(),
+      avatar: json['avatar'] as String?,
+    );
   }
 
-  /// Complete delivery (for driver)
-  Future<Result<Map<String, dynamic>>> completeDelivery(int orderId) async {
-    try {
-      final response =
-          await _apiService.put(ApiEndpoints.completeDelivery(orderId));
-
-      if (response.statusCode == 200) {
-        return Result.success(response.data['data']);
-      } else {
-        return Result.failure(
-          response.data['message'] ?? 'Failed to complete delivery',
-        );
-      }
-    } catch (e) {
-      return Result.failure('An error occurred: $e');
-    }
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'phone': phone,
+      'vehicleType': vehicleType,
+      'vehicleNumber': vehicleNumber,
+      'rating': rating,
+      'avatar': avatar,
+    };
   }
 
-  /// Update driver location (needs new endpoint in backend)
-  Future<Result<void>> updateDriverLocation(
-    double latitude,
-    double longitude,
-  ) async {
-    try {
-      final response = await _apiService.post('/driver/location', data: {
-        'latitude': latitude,
-        'longitude': longitude,
-      });
+  String get displayRating => rating?.toStringAsFixed(1) ?? '0.0';
 
-      if (response.statusCode == 200) {
-        return Result.success(null);
-      } else {
-        return Result.failure(
-          response.data['message'] ?? 'Failed to update location',
-        );
-      }
-    } catch (e) {
-      return Result.failure('An error occurred: $e');
-    }
+  @override
+  String toString() {
+    return 'DriverInfo{id: $id, name: $name, vehicle: $vehicleNumber}';
   }
 }

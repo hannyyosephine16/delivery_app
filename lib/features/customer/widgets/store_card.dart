@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:delivery_app/data/models/store/store_model.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
-import 'package:delivery_app/core/constants/app_constants.dart';
+import 'package:del_pick/data/models/store/store_model.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
 
 class StoreCard extends StatelessWidget {
   final StoreModel store;

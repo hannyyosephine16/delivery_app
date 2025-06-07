@@ -1,7 +1,7 @@
 // lib/core/services/api/auth_service.dart
 import 'package:dio/dio.dart';
-import 'package:delivery_app/core/services/api/api_service.dart';
-import 'package:delivery_app/core/constants/api_endpoints.dart';
+import 'package:del_pick/core/services/api/api_service.dart';
+import 'package:del_pick/core/constants/api_endpoints.dart';
 
 class AuthApiService {
   final ApiService _apiService;

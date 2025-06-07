@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/app/config/app_config.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
+import 'package:del_pick/app/config/app_config.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
 
 class LocationService extends getx.GetxService {
   final StorageService _storageService = getx.Get.find<StorageService>();

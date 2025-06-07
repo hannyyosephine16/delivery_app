@@ -5,7 +5,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/app/config/app_config.dart';
+import 'package:del_pick/app/config/app_config.dart';
 
 class ImageService extends getx.GetxService {
   final ImagePicker _picker = ImagePicker();

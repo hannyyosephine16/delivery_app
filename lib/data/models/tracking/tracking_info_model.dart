@@ -1,4 +1,4 @@
-import 'package:delivery_app/data/models/tracking/location_model.dart';
+import 'package:del_pick/data/models/tracking/location_model.dart';
 
 class TrackingInfoModel {
   final int orderId;

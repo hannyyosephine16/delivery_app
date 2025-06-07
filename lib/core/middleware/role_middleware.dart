@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart' as getx;
 import 'package:get/get.dart' as getx;
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
-import 'package:delivery_app/app/routes/app_routes.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
+import 'package:del_pick/app/routes/app_routes.dart';
 
 class RoleMiddleware extends getx.GetMiddleware {
   final List<String> allowedRoles;

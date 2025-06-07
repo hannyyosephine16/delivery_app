@@ -1,4 +1,4 @@
-import 'package:delivery_app/core/constants/app_constants.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
 import 'package:get/get.dart';
 
 import '../../core/services/api/api_service.dart';

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/store_repository.dart';
-import 'package:delivery_app/data/repositories/order_repository.dart';
-import 'package:delivery_app/data/repositories/menu_repository.dart';
+import 'package:del_pick/data/repositories/store_repository.dart';
+import 'package:del_pick/data/repositories/order_repository.dart';
+import 'package:del_pick/data/repositories/menu_repository.dart';
 
 class StoreDashboardController extends GetxController {
   final StoreRepository storeRepository;

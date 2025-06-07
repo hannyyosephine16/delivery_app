@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/auth_repository.dart';
-import 'package:delivery_app/data/models/auth/user_model.dart';
-import 'package:delivery_app/core/constants/app_constants.dart';
-import 'package:delivery_app/app/routes/app_routes.dart';
-import 'package:delivery_app/core/services/local/storage_service.dart';
-import 'package:delivery_app/core/constants/storage_constants.dart';
+import 'package:del_pick/data/repositories/auth_repository.dart';
+import 'package:del_pick/data/models/auth/user_model.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
+import 'package:del_pick/app/routes/app_routes.dart';
+import 'package:del_pick/core/services/local/storage_service.dart';
+import 'package:del_pick/core/constants/storage_constants.dart';
 
 class AuthController extends GetxController {
   final AuthRepository _authRepository;

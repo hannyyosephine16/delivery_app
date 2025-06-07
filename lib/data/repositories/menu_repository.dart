@@ -1,9 +1,9 @@
 // lib/data/repositories/menu_repository.dart
 
-import 'package:delivery_app/data/providers/menu_provider.dart';
-import 'package:delivery_app/data/models/menu/menu_item_model.dart';
-import 'package:delivery_app/data/models/base/base_model.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/providers/menu_provider.dart';
+import 'package:del_pick/data/models/menu/menu_item_model.dart';
+import 'package:del_pick/data/models/base/base_model.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class MenuRepository {
   final MenuProvider _menuProvider;

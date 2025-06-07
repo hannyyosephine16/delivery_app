@@ -1,54 +1,54 @@
 // import 'package:get/get.dart';
-// import 'package:delivery_app/features/shared/screens/splash_screen.dart';
-// import 'package:delivery_app/features/shared/screens/onboarding_screen.dart';
-// import 'package:delivery_app/features/shared/screens/main_navigation_screen.dart';
-// import 'package:delivery_app/features/shared/screens/no_internet_screen.dart';
-// import 'package:delivery_app/features/shared/screens/maintenance_screen.dart';
-// import 'package:delivery_app/features/shared/screens/error_screen.dart';
+// import 'package:del_pick/features/shared/screens/splash_screen.dart';
+// import 'package:del_pick/features/shared/screens/onboarding_screen.dart';
+// import 'package:del_pick/features/shared/screens/main_navigation_screen.dart';
+// import 'package:del_pick/features/shared/screens/no_internet_screen.dart';
+// import 'package:del_pick/features/shared/screens/maintenance_screen.dart';
+// import 'package:del_pick/features/shared/screens/error_screen.dart';
 //
 // // Auth imports
-// import 'package:delivery_app/features/auth/screens/login_screen.dart';
-// import 'package:delivery_app/features/auth/screens/register_screen.dart';
-// import 'package:delivery_app/features/auth/screens/forgot_password_screen.dart';
-// import 'package:delivery_app/features/auth/screens/reset_password_screen.dart';
-// import 'package:delivery_app/features/auth/screens/profile_screen.dart';
-// import 'package:delivery_app/features/auth/screens/edit_profile_screen.dart';
+// import 'package:del_pick/features/auth/screens/login_screen.dart';
+// import 'package:del_pick/features/auth/screens/register_screen.dart';
+// import 'package:del_pick/features/auth/screens/forgot_password_screen.dart';
+// import 'package:del_pick/features/auth/screens/reset_password_screen.dart';
+// import 'package:del_pick/features/auth/screens/profile_screen.dart';
+// import 'package:del_pick/features/auth/screens/edit_profile_screen.dart';
 //
 // // Customer imports
-// import 'package:delivery_app/features/customer/screens/home_screen.dart';
-// import 'package:delivery_app/features/customer/screens/store_list_screen.dart';
-// import 'package:delivery_app/features/customer/screens/store_detail_screen.dart';
-// import 'package:delivery_app/features/customer/screens/menu_screen.dart';
-// import 'package:delivery_app/features/customer/screens/menu_item_detail_screen.dart';
-// import 'package:delivery_app/features/customer/screens/cart_screen.dart';
-// import 'package:delivery_app/features/customer/screens/checkout_screen.dart';
-// import 'package:delivery_app/features/customer/screens/order_history_screen.dart';
-// import 'package:delivery_app/features/customer/screens/order_detail_screen.dart';
-// import 'package:delivery_app/features/customer/screens/order_tracking_screen.dart';
-// import 'package:delivery_app/features/customer/screens/review_screen.dart';
-// import 'package:delivery_app/features/customer/screens/customer_profile_screen.dart';
+// import 'package:del_pick/features/customer/screens/home_screen.dart';
+// import 'package:del_pick/features/customer/screens/store_list_screen.dart';
+// import 'package:del_pick/features/customer/screens/store_detail_screen.dart';
+// import 'package:del_pick/features/customer/screens/menu_screen.dart';
+// import 'package:del_pick/features/customer/screens/menu_item_detail_screen.dart';
+// import 'package:del_pick/features/customer/screens/cart_screen.dart';
+// import 'package:del_pick/features/customer/screens/checkout_screen.dart';
+// import 'package:del_pick/features/customer/screens/order_history_screen.dart';
+// import 'package:del_pick/features/customer/screens/order_detail_screen.dart';
+// import 'package:del_pick/features/customer/screens/order_tracking_screen.dart';
+// import 'package:del_pick/features/customer/screens/review_screen.dart';
+// import 'package:del_pick/features/customer/screens/customer_profile_screen.dart';
 //
 // // Driver imports
-// import 'package:delivery_app/features/driver/screens/driver_home_screen.dart';
-// import 'package:delivery_app/features/driver/screens/driver_requests_screen.dart';
-// import 'package:delivery_app/features/driver/screens/request_detail_screen.dart';
-// import 'package:delivery_app/features/driver/screens/delivery_screen.dart';
-// import 'package:delivery_app/features/driver/screens/navigation_screen.dart';
-// import 'package:delivery_app/features/driver/screens/driver_orders_screen.dart';
-// import 'package:delivery_app/features/driver/screens/driver_earnings_screen.dart';
-// import 'package:delivery_app/features/driver/screens/driver_profile_screen.dart';
-// import 'package:delivery_app/features/driver/screens/driver_settings_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_home_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_requests_screen.dart';
+// import 'package:del_pick/features/driver/screens/request_detail_screen.dart';
+// import 'package:del_pick/features/driver/screens/delivery_screen.dart';
+// import 'package:del_pick/features/driver/screens/navigation_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_orders_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_earnings_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_profile_screen.dart';
+// import 'package:del_pick/features/driver/screens/driver_settings_screen.dart';
 //
 // // Store imports
-// import 'package:delivery_app/features/store/screens/store_dashboard_screen.dart';
-// import 'package:delivery_app/features/store/screens/store_analytics_screen.dart';
-// import 'package:delivery_app/features/store/screens/menu_management_screen.dart';
-// import 'package:delivery_app/features/store/screens/add_menu_item_screen.dart';
-// import 'package:delivery_app/features/store/screens/edit_menu_item_screen.dart';
-// import 'package:delivery_app/features/store/screens/store_orders_screen.dart';
-// import 'package:delivery_app/features/store/screens/order_detail_screen.dart';
-// import 'package:delivery_app/features/store/screens/store_profile_screen.dart';
-// import 'package:delivery_app/features/store/screens/store_settings_screen.dart';
+// import 'package:del_pick/features/store/screens/store_dashboard_screen.dart';
+// import 'package:del_pick/features/store/screens/store_analytics_screen.dart';
+// import 'package:del_pick/features/store/screens/menu_management_screen.dart';
+// import 'package:del_pick/features/store/screens/add_menu_item_screen.dart';
+// import 'package:del_pick/features/store/screens/edit_menu_item_screen.dart';
+// import 'package:del_pick/features/store/screens/store_orders_screen.dart';
+// import 'package:del_pick/features/store/screens/order_detail_screen.dart';
+// import 'package:del_pick/features/store/screens/store_profile_screen.dart';
+// import 'package:del_pick/features/store/screens/store_settings_screen.dart';
 //
 // import 'app_routes.dart';
 // import '../bindings/auth_binding.dart';
@@ -263,56 +263,56 @@
 //   ];
 // }
 import 'package:get/get.dart';
-import 'package:delivery_app/features/shared/screens/splash_screen.dart';
-import 'package:delivery_app/features/shared/screens/onboarding_screen.dart';
-import 'package:delivery_app/features/shared/screens/main_navigation_screen.dart';
-import 'package:delivery_app/features/shared/screens/no_internet_screen.dart';
-import 'package:delivery_app/features/shared/screens/maintenance_screen.dart';
-import 'package:delivery_app/features/shared/screens/error_screen.dart';
+import 'package:del_pick/features/shared/screens/splash_screen.dart';
+import 'package:del_pick/features/shared/screens/onboarding_screen.dart';
+import 'package:del_pick/features/shared/screens/main_navigation_screen.dart';
+import 'package:del_pick/features/shared/screens/no_internet_screen.dart';
+import 'package:del_pick/features/shared/screens/maintenance_screen.dart';
+import 'package:del_pick/features/shared/screens/error_screen.dart';
 
 // Auth imports
-import 'package:delivery_app/features/auth/screens/login_screen.dart';
-import 'package:delivery_app/features/auth/screens/register_screen.dart';
-import 'package:delivery_app/features/auth/screens/forgot_password_screen.dart';
-import 'package:delivery_app/features/auth/screens/reset_password_screen.dart';
-import 'package:delivery_app/features/auth/screens/profile_screen.dart';
-import 'package:delivery_app/features/auth/screens/edit_profile_screen.dart';
+import 'package:del_pick/features/auth/screens/login_screen.dart';
+import 'package:del_pick/features/auth/screens/register_screen.dart';
+import 'package:del_pick/features/auth/screens/forgot_password_screen.dart';
+import 'package:del_pick/features/auth/screens/reset_password_screen.dart';
+import 'package:del_pick/features/auth/screens/profile_screen.dart';
+import 'package:del_pick/features/auth/screens/edit_profile_screen.dart';
 
 // Customer imports
-import 'package:delivery_app/features/customer/screens/home_screen.dart';
-import 'package:delivery_app/features/customer/screens/store_list_screen.dart';
-import 'package:delivery_app/features/customer/screens/store_detail_screen.dart';
-import 'package:delivery_app/features/customer/screens/menu_screen.dart';
-import 'package:delivery_app/features/customer/screens/menu_item_detail_screen.dart';
-import 'package:delivery_app/features/customer/screens/cart_screen.dart';
-import 'package:delivery_app/features/customer/screens/checkout_screen.dart';
-import 'package:delivery_app/features/customer/screens/order_history_screen.dart';
-import 'package:delivery_app/features/customer/screens/order_detail_screen.dart';
-import 'package:delivery_app/features/customer/screens/order_tracking_screen.dart';
-import 'package:delivery_app/features/customer/screens/review_screen.dart';
-import 'package:delivery_app/features/customer/screens/customer_profile_screen.dart';
+import 'package:del_pick/features/customer/screens/home_screen.dart';
+import 'package:del_pick/features/customer/screens/store_list_screen.dart';
+import 'package:del_pick/features/customer/screens/store_detail_screen.dart';
+import 'package:del_pick/features/customer/screens/menu_screen.dart';
+import 'package:del_pick/features/customer/screens/menu_item_detail_screen.dart';
+import 'package:del_pick/features/customer/screens/cart_screen.dart';
+import 'package:del_pick/features/customer/screens/checkout_screen.dart';
+import 'package:del_pick/features/customer/screens/order_history_screen.dart';
+import 'package:del_pick/features/customer/screens/order_detail_screen.dart';
+import 'package:del_pick/features/customer/screens/order_tracking_screen.dart';
+import 'package:del_pick/features/customer/screens/review_screen.dart';
+import 'package:del_pick/features/customer/screens/customer_profile_screen.dart';
 
 // Driver imports
-import 'package:delivery_app/features/driver/screens/driver_home_screen.dart';
-import 'package:delivery_app/features/driver/screens/driver_requests_screen.dart';
-import 'package:delivery_app/features/driver/screens/request_detail_screen.dart';
-import 'package:delivery_app/features/driver/screens/delivery_screen.dart';
-import 'package:delivery_app/features/driver/screens/navigation_screen.dart';
-import 'package:delivery_app/features/driver/screens/driver_orders_screen.dart';
-import 'package:delivery_app/features/driver/screens/driver_earnings_screen.dart';
-import 'package:delivery_app/features/driver/screens/driver_profile_screen.dart';
-import 'package:delivery_app/features/driver/screens/driver_settings_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_home_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_requests_screen.dart';
+import 'package:del_pick/features/driver/screens/request_detail_screen.dart';
+import 'package:del_pick/features/driver/screens/delivery_screen.dart';
+import 'package:del_pick/features/driver/screens/navigation_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_orders_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_earnings_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_profile_screen.dart';
+import 'package:del_pick/features/driver/screens/driver_settings_screen.dart';
 
 // Store imports
-import 'package:delivery_app/features/store/screens/store_dashboard_screen.dart';
-import 'package:delivery_app/features/store/screens/store_analytics_screen.dart';
-import 'package:delivery_app/features/store/screens/menu_management_screen.dart';
-import 'package:delivery_app/features/store/screens/add_menu_item_screen.dart';
-import 'package:delivery_app/features/store/screens/edit_menu_item_screen.dart';
-import 'package:delivery_app/features/store/screens/store_orders_screen.dart';
-import 'package:delivery_app/features/store/screens/order_detail_screen.dart';
-import 'package:delivery_app/features/store/screens/store_profile_screen.dart';
-import 'package:delivery_app/features/store/screens/store_settings_screen.dart';
+import 'package:del_pick/features/store/screens/store_dashboard_screen.dart';
+import 'package:del_pick/features/store/screens/store_analytics_screen.dart';
+import 'package:del_pick/features/store/screens/menu_management_screen.dart';
+import 'package:del_pick/features/store/screens/add_menu_item_screen.dart';
+import 'package:del_pick/features/store/screens/edit_menu_item_screen.dart';
+import 'package:del_pick/features/store/screens/store_orders_screen.dart';
+import 'package:del_pick/features/store/screens/order_detail_screen.dart';
+import 'package:del_pick/features/store/screens/store_profile_screen.dart';
+import 'package:del_pick/features/store/screens/store_settings_screen.dart';
 
 import 'app_routes.dart';
 import '../bindings/auth_binding.dart';

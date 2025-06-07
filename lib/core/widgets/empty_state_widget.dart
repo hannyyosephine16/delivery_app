@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
 
 class EmptyStateWidget extends StatelessWidget {
   final String message;

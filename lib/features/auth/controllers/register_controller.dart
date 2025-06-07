@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/auth_repository.dart';
-import 'package:delivery_app/core/constants/app_constants.dart';
+import 'package:del_pick/data/repositories/auth_repository.dart';
+import 'package:del_pick/core/constants/app_constants.dart';
 
 class RegisterController extends GetxController {
   final AuthRepository _authRepository;

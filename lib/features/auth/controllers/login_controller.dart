@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:delivery_app/data/repositories/auth_repository.dart';
-import 'package:delivery_app/app/routes/app_routes.dart';
+import 'package:del_pick/data/repositories/auth_repository.dart';
+import 'package:del_pick/app/routes/app_routes.dart';
 
 class LoginController extends GetxController {
   final AuthRepository _authRepository;

@@ -1,8 +1,7 @@
 // lib/features/customer/widgets/mapbox_delivery_map.dart
 import 'package:flutter/material.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-
+import 'package:del_pick/app/themes/app_colors.dart';
 class MapboxDeliveryMap extends StatefulWidget {
   final double storeLatitude;
   final double storeLongitude;
@@ -43,7 +42,6 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
         child: MapWidget(
           key: const ValueKey("mapWidget"),
           onMapCreated: _onMapCreated,
-          onTapListener: _onMapTap,
         ),
       ),
     );
@@ -52,23 +50,20 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
   void _onMapCreated(MapboxMap mapboxMap) {
     _mapboxMap = mapboxMap;
     _setupMap();
+    _setupMapTapListener();
   }
 
-  void _onMapTap(ScreenCoordinate coordinate) async {
+  void _setupMapTapListener() {
     if (widget.onMapTap != null && _mapboxMap != null) {
-      try {
-        final point = await _mapboxMap!.coordinateForPixel(coordinate);
-        // Handle the point data correctly based on the actual API
-        if (point is Map<String, dynamic>) {
-          final lat = point['latitude'] as double? ?? point['lat'] as double?;
-          final lng = point['longitude'] as double? ?? point['lng'] as double?;
-          if (lat != null && lng != null) {
-            widget.onMapTap!(lat, lng);
-          }
-        }
-      } catch (e) {
-        print('Error handling map tap: $e');
-      }
+      // Use the new Interactions API for map taps
+      _mapboxMap!.addInteraction(
+        TapInteraction.onMap((context) {
+          final coordinates = context.point.coordinates;
+          final lat = coordinates.lat.toDouble();
+          final lng = coordinates.lng.toDouble();
+          widget.onMapTap!(lat, lng);
+        }),
+      );
     }
   }
 
@@ -82,9 +77,7 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
 
       await _mapboxMap!.setCamera(
         CameraOptions(
-          center: <String, dynamic>{
-            'coordinates': [centerLng, centerLat]
-          },
+          center: Point(coordinates: Position(centerLng, centerLat)),
           zoom: 13.0,
         ),
       );
@@ -108,9 +101,9 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
           await _mapboxMap!.annotations.createPointAnnotationManager();
       await storeManager.create(
         PointAnnotationOptions(
-          geometry: <String, dynamic>{
-            'coordinates': [widget.storeLongitude, widget.storeLatitude]
-          },
+          geometry: Point(
+            coordinates: Position(widget.storeLongitude, widget.storeLatitude),
+          ),
           iconImage: "store-marker",
           iconSize: 1.5,
         ),
@@ -121,9 +114,10 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
           await _mapboxMap!.annotations.createPointAnnotationManager();
       await customerManager.create(
         PointAnnotationOptions(
-          geometry: <String, dynamic>{
-            'coordinates': [widget.customerLongitude, widget.customerLatitude]
-          },
+          geometry: Point(
+            coordinates:
+                Position(widget.customerLongitude, widget.customerLatitude),
+          ),
           iconImage: "customer-marker",
           iconSize: 1.5,
         ),
@@ -135,9 +129,10 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
             await _mapboxMap!.annotations.createPointAnnotationManager();
         await driverManager.create(
           PointAnnotationOptions(
-            geometry: <String, dynamic>{
-              'coordinates': [widget.driverLongitude!, widget.driverLatitude!]
-            },
+            geometry: Point(
+              coordinates:
+                  Position(widget.driverLongitude!, widget.driverLatitude!),
+            ),
             iconImage: "driver-marker",
             iconSize: 1.5,
           ),
@@ -153,31 +148,28 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
 
     try {
       final coordinates = [
-        [widget.storeLongitude, widget.storeLatitude],
-        [widget.customerLongitude, widget.customerLatitude],
+        Position(widget.storeLongitude, widget.storeLatitude),
+        Position(widget.customerLongitude, widget.customerLatitude),
       ];
 
       if (widget.driverLatitude != null && widget.driverLongitude != null) {
-        coordinates.add([widget.driverLongitude!, widget.driverLatitude!]);
+        coordinates
+            .add(Position(widget.driverLongitude!, widget.driverLatitude!));
       }
 
       // Calculate bounds
       double minLat = coordinates
-          .map((p) => p[1])
-          .reduce((a, b) => a < b ? a : b)
-          .toDouble();
+          .map((p) => p.lat.toDouble())
+          .reduce((a, b) => a < b ? a : b);
       double maxLat = coordinates
-          .map((p) => p[1])
-          .reduce((a, b) => a > b ? a : b)
-          .toDouble();
+          .map((p) => p.lat.toDouble())
+          .reduce((a, b) => a > b ? a : b);
       double minLng = coordinates
-          .map((p) => p[0])
-          .reduce((a, b) => a < b ? a : b)
-          .toDouble();
+          .map((p) => p.lng.toDouble())
+          .reduce((a, b) => a < b ? a : b);
       double maxLng = coordinates
-          .map((p) => p[0])
-          .reduce((a, b) => a > b ? a : b)
-          .toDouble();
+          .map((p) => p.lng.toDouble())
+          .reduce((a, b) => a > b ? a : b);
 
       // Add padding
       const padding = 0.005;
@@ -186,12 +178,19 @@ class _MapboxDeliveryMapState extends State<MapboxDeliveryMap> {
       minLng -= padding;
       maxLng += padding;
 
-      await _mapboxMap!.setCamera(
-        CameraOptions(
-          center: <String, dynamic>{
-            'coordinates': [(minLng + maxLng) / 2, (minLat + maxLat) / 2]
-          },
-          zoom: 12.0,
+      // Create bounds
+      final bounds = CoordinateBounds(
+        southwest: Point(coordinates: Position(minLng, minLat)),
+        northeast: Point(coordinates: Position(maxLng, maxLat)),
+        infiniteBounds: false,
+      );
+
+      // Fit camera to bounds
+      await _mapboxMap!.setBounds(
+        CameraBoundsOptions(
+          bounds: bounds,
+          maxZoom: 15.0,
+          minZoom: 10.0,
         ),
       );
     } catch (e) {

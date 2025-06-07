@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/app/config/app_config.dart';
-import 'package:delivery_app/app/themes/app_theme.dart';
-import 'package:delivery_app/app/routes/app_pages.dart';
-import 'package:delivery_app/app/bindings/initial_binding.dart';
+import 'package:del_pick/app/config/app_config.dart';
+import 'package:del_pick/app/themes/app_theme.dart';
+import 'package:del_pick/app/routes/app_pages.dart';
+import 'package:del_pick/app/bindings/initial_binding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

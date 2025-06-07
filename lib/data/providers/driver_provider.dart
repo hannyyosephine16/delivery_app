@@ -1,5 +1,5 @@
-import 'package:delivery_app/data/datasources/remote/driver_remote_datasource.dart';
-import 'package:delivery_app/core/utils/result.dart';
+import 'package:del_pick/data/datasources/remote/driver_remote_datasource.dart';
+import 'package:del_pick/core/utils/result.dart';
 
 class DriverProvider {
   final DriverRemoteDataSource remoteDataSource;

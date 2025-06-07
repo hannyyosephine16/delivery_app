@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/features/auth/controllers/auth_controller.dart';
-import 'package:delivery_app/core/widgets/custom_button.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
-import 'package:delivery_app/app/themes/app_dimensions.dart';
-import 'package:delivery_app/app/routes/app_routes.dart';
+import 'package:del_pick/features/auth/controllers/auth_controller.dart';
+import 'package:del_pick/core/widgets/custom_button.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
+import 'package:del_pick/app/themes/app_dimensions.dart';
+import 'package:del_pick/app/routes/app_routes.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

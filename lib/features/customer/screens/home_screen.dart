@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_app/features/customer/controllers/home_controller.dart';
-import 'package:delivery_app/features/customer/widgets/store_card.dart';
-import 'package:delivery_app/features/customer/widgets/order_card.dart';
-import 'package:delivery_app/core/widgets/loading_widget.dart';
-import 'package:delivery_app/core/widgets/empty_state_widget.dart';
-import 'package:delivery_app/app/themes/app_colors.dart';
-import 'package:delivery_app/app/themes/app_text_styles.dart';
-import 'package:delivery_app/app/themes/app_dimensions.dart';
+import 'package:del_pick/features/customer/controllers/home_controller.dart';
+import 'package:del_pick/features/customer/widgets/store_card.dart';
+import 'package:del_pick/features/customer/widgets/order_card.dart';
+import 'package:del_pick/core/widgets/loading_widget.dart';
+import 'package:del_pick/core/widgets/empty_state_widget.dart';
+import 'package:del_pick/app/themes/app_colors.dart';
+import 'package:del_pick/app/themes/app_text_styles.dart';
+import 'package:del_pick/app/themes/app_dimensions.dart';
 
 class CustomerHomeScreen extends StatelessWidget {
   const CustomerHomeScreen({super.key});
