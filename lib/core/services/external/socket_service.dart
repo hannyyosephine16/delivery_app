@@ -1,7 +1,7 @@
 // lib/core/services/external/socket_service.dart - Fixed imports
 import 'dart:async';
-import 'package:socket_io_client/socket_io_client.dart' as IO;
 import 'package:get/get.dart' as getx;
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 import 'package:delivery_app/app/config/environment_config.dart';
 import 'package:delivery_app/core/services/local/storage_service.dart';
 import 'package:delivery_app/core/constants/storage_constants.dart';

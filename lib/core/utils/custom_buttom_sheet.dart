@@ -134,9 +134,7 @@ class CustomBottomSheet {
                     child: Text(cancelText ?? 'Cancel'),
                   ),
                 ),
-
                 const SizedBox(width: AppDimensions.spacingLG),
-
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -177,7 +175,6 @@ class CustomBottomSheet {
               enabled: option.enabled,
             ),
           ),
-
           if (showCancel) ...[
             const Divider(),
             ListTile(
@@ -232,36 +229,35 @@ class CustomBottomSheet {
       ],
       child: GetBuilder<FilterController>(
         init: filterController,
-        builder:
-            (controller) => Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: controller.filters.length,
-                    itemBuilder: (context, index) {
-                      final filter = controller.filters[index];
-                      return _buildFilterItem(filter, controller);
-                    },
-                  ),
-                ),
-
-                // Apply button
-                Padding(
-                  padding: const EdgeInsets.all(AppDimensions.paddingLG),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Get.back(result: controller.getFilters());
-                      },
-                      child: const Text('Apply Filters'),
-                    ),
-                  ),
-                ),
-              ],
+        builder: (controller) => Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: controller.filters.length,
+                itemBuilder: (context, index) {
+                  final filter = controller.filters[index];
+                  return _buildFilterItem(filter, controller);
+                },
+              ),
             ),
+
+            // Apply button
+            Padding(
+              padding: const EdgeInsets.all(AppDimensions.paddingLG),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Get.back(result: controller.getFilters());
+                  },
+                  child: const Text('Apply Filters'),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -296,13 +292,12 @@ class CustomBottomSheet {
           subtitle: DropdownButton<String>(
             isExpanded: true,
             value: controller.getValue(filter.key),
-            items:
-                filter.options
-                    ?.map(
-                      (option) =>
-                          DropdownMenuItem(value: option, child: Text(option)),
-                    )
-                    .toList(),
+            items: filter.options
+                ?.map(
+                  (option) =>
+                      DropdownMenuItem(value: option, child: Text(option)),
+                )
+                .toList(),
             onChanged: (value) => controller.setValue(filter.key, value),
           ),
         );

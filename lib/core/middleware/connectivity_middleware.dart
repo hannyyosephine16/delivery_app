@@ -24,11 +24,9 @@ class ConnectivityMiddleware {
 
         handler.next(options);
       },
-
       onResponse: (response, handler) {
         handler.next(response);
       },
-
       onError: (error, handler) {
         // Handle connection errors
         if (error.type == DioExceptionType.connectionError) {

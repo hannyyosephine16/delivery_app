@@ -23,12 +23,10 @@ class AuthMiddleware {
 
         handler.next(options);
       },
-
       onResponse: (response, handler) {
         // Handle successful responses
         handler.next(response);
       },
-
       onError: (error, handler) async {
         if (error.response?.statusCode == 401) {
           await _handleUnauthorized();

@@ -156,15 +156,15 @@ class LocationService extends getx.GetxService {
   }
 
   Position get defaultLocation => Position(
-    latitude: AppConfig.defaultLatitude,
-    longitude: AppConfig.defaultLongitude,
-    timestamp: DateTime.now(),
-    accuracy: 0,
-    altitude: 0,
-    altitudeAccuracy: 0,
-    heading: 0,
-    speed: 0,
-    headingAccuracy: 0,
-    speedAccuracy: 0,
-  );
+        latitude: AppConfig.defaultLatitude,
+        longitude: AppConfig.defaultLongitude,
+        timestamp: DateTime.now(),
+        accuracy: 0,
+        altitude: 0,
+        altitudeAccuracy: 0,
+        heading: 0,
+        speed: 0,
+        headingAccuracy: 0,
+        speedAccuracy: 0,
+      );
 }

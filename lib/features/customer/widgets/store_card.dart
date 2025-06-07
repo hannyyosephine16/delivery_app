@@ -31,25 +31,22 @@ class StoreCard extends StatelessWidget {
               child: SizedBox(
                 height: 150,
                 width: double.infinity,
-                child:
-                    store.imageUrl != null
-                        ? CachedNetworkImage(
-                          imageUrl: store.imageUrl!,
-                          fit: BoxFit.cover,
-                          placeholder:
-                              (context, url) => const Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                          errorWidget:
-                              (context, url, error) => Image.asset(
-                                AppConstants.defaultStoreImageUrl,
-                                fit: BoxFit.cover,
-                              ),
-                        )
-                        : Image.asset(
+                child: store.imageUrl != null
+                    ? CachedNetworkImage(
+                        imageUrl: store.imageUrl!,
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) => const Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                        errorWidget: (context, url, error) => Image.asset(
                           AppConstants.defaultStoreImageUrl,
                           fit: BoxFit.cover,
                         ),
+                      )
+                    : Image.asset(
+                        AppConstants.defaultStoreImageUrl,
+                        fit: BoxFit.cover,
+                      ),
               ),
             ),
 
@@ -144,10 +141,9 @@ class StoreCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color:
-            isOpen
-                ? AppColors.success.withOpacity(0.1)
-                : AppColors.error.withOpacity(0.1),
+        color: isOpen
+            ? AppColors.success.withOpacity(0.1)
+            : AppColors.error.withOpacity(0.1),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Text(
