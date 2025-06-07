@@ -10,7 +10,7 @@ import 'package:del_pick/data/datasources/remote/menu_remote_datasource.dart';
 import 'package:del_pick/data/datasources/remote/order_remote_datasource.dart';
 
 // Import the controller files once they're created
-// import 'package:del_pick/features/store/controllers/store_dashboard_controller.dart';
+import 'package:del_pick/features/store/controllers/store_dashboard_controller.dart';
 // import 'package:del_pick/features/store/controllers/menu_management_controller.dart';
 // import 'package:del_pick/features/store/controllers/add_menu_item_controller.dart';
 // import 'package:del_pick/features/store/controllers/store_orders_controller.dart';
@@ -37,7 +37,7 @@ class StoreBinding extends Bindings {
     Get.lazyPut<OrderRepository>(() => OrderRepository(Get.find()));
 
     // Controllers - uncomment when the controller files are created
-    /*
+
     Get.lazyPut<StoreDashboardController>(
       () => StoreDashboardController(
         storeRepository: Get.find(),
@@ -45,6 +45,7 @@ class StoreBinding extends Bindings {
         menuRepository: Get.find(),
       ),
     );
+    /*
     Get.lazyPut<MenuManagementController>(
       () => MenuManagementController(Get.find()),
     );
